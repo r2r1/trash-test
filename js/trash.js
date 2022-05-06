@@ -3,6 +3,18 @@ let number = window.location.search.split("?")[1];
 document.getElementById("number").innerText = number;
 document.getElementById("prev").href = "?" + (parseInt(number) - 1);
 document.getElementById("next").href = "?" + (parseInt(number) + 1);
+function {
+	const url = "/trashList.json"
+	let response = await fetch(url);
+
+	if (response.ok) { // если HTTP-статус в диапазоне 200-299
+  // получаем тело ответа (см. про этот метод ниже)
+  	let json = await response.json();
+	} else {
+  	alert("Ошибка HTTP: " + response.status);
+	}
+}
+
 function func(url, number, status) {
 	return fetch(url, {
 		"headers": {
