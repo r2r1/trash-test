@@ -27,7 +27,7 @@ function func(url, number, status) {
 			"sec-fetch-mode": "cors",
 			"sec-fetch-site": "same-origin"
 		},
-		"referrer": "https://rfrk.ru/tit/?" + number,
+		"referrer": "https://rfrk.ru/trash/?" + number,
 		"referrerPolicy": "strict-origin-when-cross-origin",
 		"body": "entry.1134586381=" + number + "&entry.1496506828=" + status + "&entry.807958025=12312&entry.703388132=3123",
 		"method": "POST",
