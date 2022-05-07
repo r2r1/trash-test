@@ -3,16 +3,30 @@ let number = window.location.search.split("?")[1];
 document.getElementById("number").innerText = number;
 document.getElementById("prev").href = "?" + (parseInt(number) - 1);
 document.getElementById("next").href = "?" + (parseInt(number) + 1);
-function  getInfo() {
-	const url = "/trashList.json"
-	//let url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
-	let response = await fetch(url);
 
-	let commits = await response.json(); // читаем ответ в формате JSON
+async function getUser() {
+	try {
+	  const response = await fetch('/trashList.json');
 
-alert(commits[0].author.login);
+  
+	  if (!response.ok) {
+		throw new Error(`Error! status: ${response.status}`);
+	  }
+  
+	  const result = await response.json();
+	  
 
-function func(url, number, status) {
+	  return result;
+	} catch (err) {
+	  console.log(err);
+	}
+  }
+  
+  getUser().forEach(element => console.log(element));
+
+
+	
+function func(a, number, status) {
 	return fetch(url, {
 		"headers": {
 			"accept": "application/xml, text/xml, */*; q=0.01",
