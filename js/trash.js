@@ -3,7 +3,7 @@ let number = window.location.search.split("?")[1];
 document.getElementById("number").innerText = number;
 document.getElementById("prev").href = "?" + (parseInt(number) - 1);
 document.getElementById("next").href = "?" + (parseInt(number) + 1);
-function  getInfo{
+function  getInfo() {
 	const url = "/trashList.json"
 	let response = await fetch(url);
 
