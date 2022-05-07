@@ -5,16 +5,12 @@ document.getElementById("prev").href = "?" + (parseInt(number) - 1);
 document.getElementById("next").href = "?" + (parseInt(number) + 1);
 function  getInfo() {
 	const url = "/trashList.json"
+	let url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
 	let response = await fetch(url);
 
-		if (response.ok) { // если HTTP-статус в диапазоне 200-299
-  // получаем тело ответа (см. про этот метод ниже)
-  			let json = await response.json();
-	}
-		else {
-  			alert("Ошибка HTTP: " + response.status);
-	}
-}
+	let commits = await response.json(); // читаем ответ в формате JSON
+
+alert(commits[0].author.login);
 
 function func(url, number, status) {
 	return fetch(url, {
