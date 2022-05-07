@@ -5,7 +5,7 @@ document.getElementById("prev").href = "?" + (parseInt(number) - 1);
 document.getElementById("next").href = "?" + (parseInt(number) + 1);
 function  getInfo() {
 	const url = "/trashList.json"
-	let url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
+	//let url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
 	let response = await fetch(url);
 
 	let commits = await response.json(); // читаем ответ в формате JSON
